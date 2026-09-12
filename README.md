@@ -18,3 +18,6 @@ Important:
 
 Browser-only deployment:
 Upload/replace the app, lib, public, package.json and README files in GitHub. Vercel will redeploy automatically.
+
+
+Build fix: Supabase MFA challenge returns data.id; the app uses c.data.id for verification.
