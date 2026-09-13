@@ -40,6 +40,8 @@ export default function Home(){
         </div>
 
         <div className="trust-row"><span><Icon type="secure"/>Secure</span><span><Icon type="cloud"/>Scalable</span><span><Icon type="people"/>People Centric</span><span><Icon type="globe"/>Future Ready</span></div>
+
+        <div className="landing-footer-statement"><b>Your People.</b> <b>Your Process.</b> <span>A brighter tomorrow.</span></div>
       </div>
       <div className="landing-waves"><span/><span/><span/></div>
     </section>
