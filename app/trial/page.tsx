@@ -20,7 +20,7 @@ export default function Trial(){
     email:email.trim().toLowerCase(),password,
     options:{
       data:{full_name:name.trim(),phone:fullPhone,company_name:company.trim()},
-      emailRedirectTo:`${window.location.origin}/auth/callback?next=/hrms`
+      emailRedirectTo:`${process.env.NEXT_PUBLIC_SITE_URL}/auth/confirm?next=/hrms`
     }
   })
   if(error){setErr(error.message);setBusy(false);return}

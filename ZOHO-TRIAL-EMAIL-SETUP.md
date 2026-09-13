@@ -9,7 +9,7 @@ The trial flow now uses Supabase Auth email confirmation. The organization is pr
    - Confirm email: ON
 2. Authentication -> URL Configuration:
    - Site URL: your production HumaNest URL
-   - Redirect URL: `https://YOUR-HUMANEST-DOMAIN/auth/callback?next=/hrms`
+   - Redirect URL: `https://app.humanest.co.in/auth/confirm`
 3. Authentication -> SMTP:
    - Enable custom SMTP.
    - Sender name: `HumaNest`
@@ -38,8 +38,17 @@ Suggested body:
 <p>Thank you for choosing HumaNest.</p>
 <p>Your 7-day HumaNest trial request for <strong>{{ .Data.company_name }}</strong> has been submitted successfully.</p>
 <p>Please click the button below to activate your account and access your HumaNest HRMS portal.</p>
-<p><a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:12px 20px;border-radius:8px;background:#087fd9;color:#fff;text-decoration:none;font-weight:700">Activate My HumaNest Account</a></p>
+<p><a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&next=/hrms" style="display:inline-block;padding:12px 20px;border-radius:8px;background:#087fd9;color:#fff;text-decoration:none;font-weight:700">Activate My HumaNest Account</a></p>
 <p>Your trial starts when your account is activated and remains available for 7 days.</p>
 <p>Regards,<br>HumaNest Team<br>Your People. Your Process.</p>`
 
-The application callback at `/auth/callback` provisions the tenant after the email has been confirmed and redirects the user to `/hrms`.
+The server-side confirmation route at `/auth/confirm` verifies the token, provisions the tenant after email confirmation, establishes the session, and redirects the user to `/hrms`.
+
+
+## Production environment variable
+
+Set this in Vercel Production:
+
+`NEXT_PUBLIC_SITE_URL=https://app.humanest.co.in`
+
+Do not use a `vercel.app` deployment URL for customer-facing activation links.
