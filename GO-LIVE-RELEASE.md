@@ -49,3 +49,13 @@ This release adds the working customer HRMS workspace and Platform Admin operati
 
 ## Important
 The database foundation and lifecycle controls are live, but India-specific statutory payroll calculations (PF/ESI/PT/TDS), biometric vendor adapters, Razorpay billing, and production-grade reporting exports still require dedicated validation before a commercial payroll go-live.
+
+## Platform Admin hardening update
+- Fixed the live `platform_admin_can` / platform RBAC function execution permission that was causing `permission denied for function platform_admin_can`.
+- Seeded the platform-role permission matrix for SaaS Admin, Customer Success, Sales, Support, Finance and Auditor.
+- Platform Users is now intended as a functional administration screen: create/invite platform users, assign a platform role, enable/disable access, and enforce the single Super Admin rule.
+- Platform user creation is handled server-side by the Supabase Edge Function; privileged auth credentials are never placed in the browser.
+- Customer licensing now includes both employee quota and user quota.
+- The Edge Function `trial-provision` is now version 5.
+- Platform authorization now uses protected Auth `app_metadata` (`platform_user` / `platform_admin`) for RLS identity, avoiding circular RLS evaluation through `user_profiles`.
+- Existing platform super-admin was bootstrapped with the protected platform claims. After deployment, sign out and sign back in once so the browser receives the refreshed JWT claims.
