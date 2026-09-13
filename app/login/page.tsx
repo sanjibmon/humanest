@@ -25,7 +25,7 @@ export default function Login(){
    <section className="auth-brand">
      <a href="/" className="back-home">← Back to Home</a>
      <div className="brand-center">
-       <img src="/humanest-logo.png" className="auth-logo" alt="HumaNest"/>
+       <img src="/humanest-logo-tight.png" className="auth-logo" alt="HumaNest"/>
        <h1>People Empower<br/>Progress<span>.</span></h1>
        <p>A smarter platform for organizations<br/>to manage people, processes and possibilities.</p>
        <div className="mini-pillars"><span><Icon type="people"/>People</span><span><Icon type="process"/>Process</span><span><Icon type="progress"/>Progress</span></div>
@@ -34,7 +34,7 @@ export default function Login(){
    </section>
    <section className="auth-form-area">
      <div className="glass-card">
-       <img src="/humanest-logo.png" className="form-logo" alt="HumaNest"/>
+       <img src="/humanest-logo-tight.png" className="form-logo" alt="HumaNest"/>
        <h2>Customer Login</h2>
        <p className="subtitle">Access your organization's HRMS</p>
        {mode==='login'?<form onSubmit={submit}>
