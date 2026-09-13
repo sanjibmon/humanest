@@ -1,23 +1,38 @@
-# HumaNest Full Test Suite
+# HumaNest — Final Test Build
 
-This package contains one Next.js app with:
-- `/platform-admin` — Platform Admin with TOTP MFA challenge and clickable sections
-- `/login` — customer/employee login with TOTP challenge
-- `/trial` — public 7-day trial signup
-- `/hrms` — customer-facing HRMS shell reading the logged-in tenant, enabled modules, and employees
-- `/` — test launcher
+**Your People. Your Process.**
 
-Supabase project is configured through NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.
+This package contains the final browser-test build for the HumaNest public landing page, Customer Login, 7-Day Trial signup, Platform Login with Authenticator/TOTP MFA enrollment + verification, and the current Platform Admin / Customer HRMS shells.
 
-Important:
-1. Add these two environment variables in Vercel.
-2. The database function `public.provision_my_trial(...)` must exist. It has been applied to the current HumaNest project.
-3. Platform Admin login uses the existing Auth user and Super Admin database role.
-4. Never put a Supabase secret/service-role key in this app.
-5. First Platform Admin login enrolls a TOTP authenticator and then requires the 6-digit code.
+## Routes
 
-Browser-only deployment:
-Upload/replace the app, lib, public, package.json and README files in GitHub. Vercel will redeploy automatically.
+- `/` — Public HumaNest landing page
+- `/login` — Customer Login + TOTP verification
+- `/trial` — Create a 7-Day Trial
+- `/platform-admin` — Separate Platform Login + first-time TOTP QR setup + Platform Admin dashboard
+- `/hrms` — Customer HRMS shell
 
+## Supabase
 
-Build fix: Supabase MFA challenge returns data.id; the app uses c.data.id for verification.
+The frontend uses only the Supabase publishable key. Never put a service-role/secret key in this project.
+
+Create `.env.local` from `.env.example` and set `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` to the project's publishable key.
+
+The existing HumaNest Supabase database and trial-provisioning function are expected to already be present.
+
+## Browser-only GitHub upload
+
+Upload the contents of this folder to the `main` branch of the HumaNest GitHub repository. Do not upload the `.next` folder or any secret key.
+
+Vercel should then build automatically from GitHub.
+
+## Important MFA behavior
+
+Platform Login is intentionally separate from Customer Login. After password authentication:
+
+1. If the Platform Admin has no verified TOTP factor, the page enrolls one and displays a QR code.
+2. Scan the QR code with an authenticator app.
+3. Enter the 6-digit code to activate MFA.
+4. Future Platform Logins request the 6-digit TOTP code after the password.
+
+The code uses `challenge.data.id` for Supabase MFA challenge verification.
