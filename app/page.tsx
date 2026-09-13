@@ -50,6 +50,7 @@ export default function Home(){
       </div>
 
       <div className="landing-footer-statement">YOUR PEOPLE. YOUR PROCESS. A BRIGHTER TOMORROW.</div>
+      <div className="display-recommendation" role="note">Recommended display: <strong>1920 × 1080</strong> · Browser zoom: <strong>100%</strong></div>
       <div className="landing-waves"><span/><span/><span/></div>
     </section>
   </main>
