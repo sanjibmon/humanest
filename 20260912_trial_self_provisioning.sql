@@ -1,0 +1,4 @@
+-- HumaNest: authenticated self-service 7-day trial provisioning.
+-- This migration has already been applied to the current HumaNest Supabase project.
+-- It intentionally uses auth.uid() and SECURITY DEFINER; no service key is exposed to the browser.
+-- Copy the exact applied migration from your project history if migrating to another environment.
