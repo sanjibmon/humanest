@@ -44,25 +44,5 @@ export default function Home(){
       <div className="landing-waves"><span/><span/><span/></div>
     </section>
 
-    <section className="landing-right">
-      <div className="preview-stack">
-        <a className="preview-login-card" href="/login" aria-label="Customer Login page">
-          <div className="preview-login-head"><h2>Customer Login</h2><span>Open →</span></div>
-          <p>Access your organization's HRMS</p>
-          <div className="preview-field"><Icon type="mail"/> <span>Email</span></div>
-          <div className="preview-field"><Icon type="lock"/> <span>Password</span><Icon type="eye"/></div>
-          <div className="preview-button">Login <b>→</b></div>
-          <div className="preview-secure"><Icon type="secure"/> Secure Access <span>Your data is safe with us</span></div>
-        </a>
-        <a className="preview-login-card" href="/platform-admin" aria-label="Platform Login page">
-          <div className="preview-login-head"><h2>Platform Login</h2><span>Open →</span></div>
-          <p>Manage customers, modules and platform operations</p>
-          <div className="preview-field"><Icon type="mail"/> <span>Email</span></div>
-          <div className="preview-field"><Icon type="lock"/> <span>Password</span><Icon type="eye"/></div>
-          <div className="preview-button">Login <b>→</b></div>
-          <div className="preview-secure"><Icon type="secure"/> Secure Access <span>Your data is safe with us</span></div>
-        </a>
-      </div>
-    </section>
   </main>
 }

@@ -20,3 +20,7 @@ The preview cards are navigation-only. They do not authenticate on the landing p
 Upload the extracted contents to the GitHub repository `sanjibmon/humanest` and let Vercel deploy from `main`.
 
 Do not commit `.env.local` or any Supabase service-role/secret key.
+
+
+## Landing page behavior
+The HumaNest home page is intentionally the full-width left/hero section only. It does NOT show Customer Login or Platform Login forms/previews on the home page. The three action cards are navigation-only: Customer Login -> `/login`, Platform Login -> `/platform-admin`, Start Free Trial -> `/trial`.
