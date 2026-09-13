@@ -201,3 +201,6 @@ a{text-decoration:none;color:inherit}
 .phone-dash{display:flex;align-items:center;justify-content:center;width:12px;color:#5f7188;font-size:13px;font-weight:700;line-height:1}
 @media (min-width:901px) and (max-height:820px){.pillars{width:min(700px,100%);column-gap:clamp(28px,4vw,58px)}.pillar{max-width:150px}.pillar-badge{width:68px;height:68px}.pillar-title{font-size:13px}.pillar-caption{font-size:9px;min-height:2.4em}.trust-image{width:18px!important;height:18px!important}.trust-row{gap:22px}}
 @media (max-width:700px){.phone-row{grid-template-columns:minmax(125px,38%) 10px minmax(0,1fr)}.pillars{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:10px}.pillar{max-width:130px}.pillar-badge{width:72px;height:72px}.pillar-title{font-size:13px}.pillar-caption{font-size:9px}.trust-image{width:20px!important;height:20px!important}}
+
+/* Trial confirmation / activation */
+.trial-thankyou{text-align:center;max-width:650px}.thank-icon{width:58px;height:58px;margin:8px auto 12px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#087fd9,#20ce80);color:#fff;font-size:30px;font-weight:900}.thank-message{font-size:18px;line-height:1.45;color:#173a68;font-weight:800;margin:0 auto 10px}.thank-button{display:inline-grid;place-items:center;text-align:center;text-decoration:none;margin-top:18px;padding:0 24px;min-height:46px}
