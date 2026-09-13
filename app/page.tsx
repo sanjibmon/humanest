@@ -18,17 +18,6 @@ const Icon = ({type}:{type:'people'|'process'|'progress'|'customer'|'platform'|'
   return <span className={`icon icon-${type}`}><svg viewBox="0 0 24 24" aria-hidden="true">{paths[type]}</svg></span>
 }
 
-function PreviewCard({type,title,subtitle,href}:{type:'customer'|'platform',title:string,subtitle:string,href:string}){
-  return <a className="preview-login-card" href={href} aria-label={`${title} page`}>
-    <div className="preview-login-head"><h2>{title}</h2><span>Open →</span></div>
-    <p>{subtitle}</p>
-    <div className="preview-field"><Icon type="mail"/> <span>Email</span></div>
-    <div className="preview-field"><Icon type="lock"/> <span>Password</span><Icon type="eye"/></div>
-    <div className="preview-button">Login <b>→</b></div>
-    <div className="preview-secure"><Icon type="secure"/> Secure Access <span>Your data is safe with us</span></div>
-  </a>
-}
-
 export default function Home(){
   return <main className="landing-page">
     <section className="landing-left">
@@ -53,13 +42,6 @@ export default function Home(){
         <div className="trust-row"><span><Icon type="secure"/>Secure</span><span><Icon type="cloud"/>Scalable</span><span><Icon type="people"/>People Centric</span><span><Icon type="globe"/>Future Ready</span></div>
       </div>
       <div className="landing-waves"><span/><span/><span/></div>
-    </section>
-
-    <section className="landing-right">
-      <div className="preview-stack">
-        <PreviewCard type="customer" title="Customer Login" subtitle="Access your organization's HRMS" href="/login"/>
-        <PreviewCard type="platform" title="Platform Login" subtitle="Manage customers, modules and platform operations" href="/platform-admin"/>
-      </div>
     </section>
   </main>
 }
