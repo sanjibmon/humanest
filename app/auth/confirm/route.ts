@@ -11,7 +11,10 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const tokenHash = searchParams.get('token_hash')
   const type = searchParams.get('type') as EmailOtpType | null
-  const next = safeNextPath(searchParams.get('next'))
+  const requestedNext = safeNextPath(searchParams.get('next'))
+  // New customer accounts must complete mandatory TOTP MFA before HRMS access.
+  // Existing internal/admin flows can still use an explicit internal destination.
+  const next = requestedNext === '/hrms' ? '/mfa-setup?next=/hrms' : requestedNext
 
   if (!tokenHash || !type) {
     return NextResponse.redirect(new URL('/trial?activation=invalid', request.url))
