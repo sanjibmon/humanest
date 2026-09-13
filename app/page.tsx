@@ -1,7 +1,7 @@
 'use client'
 
 const TrustIcon = ({src, alt}:{src:string;alt:string}) => (
-  <img className="trust-image" src={src} alt={alt} />
+  <img className="trust-image" src={src} alt={alt} aria-hidden={!alt} />
 )
 
 export default function Home(){
@@ -17,7 +17,7 @@ export default function Home(){
         </div>
 
         <div className="landing-left-content">
-          <img src="/humanest-logo.png" className="landing-logo" alt="HumaNest" />
+          <img src="/humanest-logo-tight.png" className="landing-logo" alt="HumaNest — Your People. Your Process." />
 
           <h1>People Empower<br/>Progress<span>.</span></h1>
           <p className="landing-copy">
@@ -50,10 +50,10 @@ export default function Home(){
           </div>
 
           <div className="trust-row">
-            <span><TrustIcon src="/trust_secure.png" alt=""/>Secure</span>
-            <span><TrustIcon src="/trust_cloud.png" alt=""/>Scalable</span>
-            <span><TrustIcon src="/trust_people.png" alt=""/>People Centric</span>
-            <span><TrustIcon src="/trust_globe.png" alt=""/>Future Ready</span>
+            <span><TrustIcon src="/trust_secure_transparent.png" alt=""/>Secure</span>
+            <span><TrustIcon src="/trust_cloud_transparent.png" alt=""/>Scalable</span>
+            <span><TrustIcon src="/trust_people_transparent.png" alt=""/>People Centric</span>
+            <span><TrustIcon src="/trust_globe_transparent.png" alt=""/>Future Ready</span>
           </div>
         </div>
 

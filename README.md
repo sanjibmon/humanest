@@ -1,20 +1,11 @@
-# HumaNest Landing Page — Responsive Reference Build
+# HumaNest Landing Page — Responsive v4
 
-This build uses the supplied HumaNest landing-page artwork as individual, fixed-ratio assets rather than placing the entire screenshot as the page background.
+This version keeps the supplied visual artwork as individual assets rather than stretching the complete reference image.
 
-## Key fixes
-- Restores the People / Process / Progress graphics together with their taglines.
-- Uses transparent versions of the Customer Login, Platform Login and Start Free Trial icons.
-- Keeps icon dimensions controlled so assets are not stretched or distorted.
-- Bottom statement is rendered as live HTML text for maximum clarity instead of being part of a stretched image.
-- Responsive CSS continuously adjusts the composition for desktop resolutions at 100% browser zoom, including 1920×1080, 1600×900, 1360×768 and 1280×1024.
-- Only the main “People Empower Progress.” headline is intentionally reduced/tightened to preserve the requested fit.
-
-## Routes
-- `/` — landing page
-- `/login` — customer login
-- `/platform-admin` — platform login
-- `/trial` — trial route placeholder/link
-
-## Deployment
-Upload the project files to the existing HumaNest GitHub repository and let Vercel build the `main` branch.
+Key fixes:
+- Cropped transparent margins from the HumaNest logo asset without changing the visible artwork.
+- Moved the main composition upward so the pillar captions and trust row remain above the bottom ribbon on shorter desktop screens.
+- Restored People / Process / Progress pillar artwork with their captions.
+- Removed the opaque pale backgrounds from Secure / Scalable / People Centric / Future Ready icons.
+- Kept the bottom statement as live HTML text for maximum clarity.
+- Added separate desktop density rules for short (768–820px), medium (900–950px), and tall desktop heights.
