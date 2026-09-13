@@ -43,6 +43,7 @@ export async function GET(request: NextRequest) {
     p_company_name: company,
     p_legal_name: company,
     p_full_name: fullName,
+    p_phone: String(metadata.phone ?? '').trim(),
     p_trial_days: 7,
   })
 
