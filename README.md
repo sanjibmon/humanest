@@ -1,23 +1,19 @@
-# HumaNest — Responsive Landing Page
+# HumaNest Landing Page – Reference Match v2
 
-This version reproduces the approved HumaNest first-page visual as the landing page.
+This build updates the landing page against the supplied 884x1024 reference artwork.
 
-## Desktop viewport targets
-- 1920 × 1080 @ 100%
-- 1600 × 900 @ 100%
-- 1360 × 768 @ 100%
-- 1280 × 1024 @ 100%
+### Visual changes
+- Uses the supplied reference artwork's exact People, Process and Progress badge graphics.
+- Uses the supplied reference artwork's exact Customer Login, Platform Login and Start Free Trial icons.
+- Adds more horizontal separation between the People / Process / Progress sections.
+- Keeps the bottom statement white but improves visibility with stronger weight and subtle contrast shadow.
+- Keeps the responsive desktop fitting behavior for 1920x1080, 1600x900, 1360x768 and 1280x1024 at 100% browser scale.
+- Does not intentionally change the approved color palette.
 
-The landing page is height-fitted to the viewport and avoids horizontal scrolling. The three cards remain navigation-only:
-- Customer Login → `/login`
-- Platform Login → `/platform-admin`
-- Start Free Trial → `/trial`
+### Navigation
+- Customer Login -> `/login`
+- Platform Login -> `/platform-admin`
+- Start Free Trial -> `/trial`
 
-The approved logo, colors and SVG icon treatment are preserved. The main `People Empower Progress.` headline is intentionally reduced/tightened to keep the complete composition visible on shorter desktop screens.
-
-## Run
-
-```bash
-npm install
-npm run dev
-```
+### Deploy
+Upload the project contents to the existing GitHub `main` branch and let Vercel build the deployment.

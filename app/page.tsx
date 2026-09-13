@@ -27,15 +27,15 @@ export default function Home(){
         <p className="landing-copy">A smarter platform for organizations<br/>to manage people, processes and possibilities.</p>
 
         <div className="pillars">
-          <div><Icon type="people"/><b>People</b><span>Empowering<br/>your workforce</span></div>
-          <div><Icon type="process"/><b>Process</b><span>Simplifying<br/>your operations</span></div>
-          <div><Icon type="progress"/><b>Progress</b><span>Driving a<br/>brighter tomorrow</span></div>
+          <div><img className="pillar-badge" src="/pillar_people_badge.png" alt="People"/></div>
+          <div><img className="pillar-badge" src="/pillar_process_badge.png" alt="Process"/></div>
+          <div><img className="pillar-badge" src="/pillar_progress_badge.png" alt="Progress"/></div>
         </div>
 
         <div className="landing-actions">
-          <a href="/login" className="action-card"><Icon type="customer"/><div><b>Customer Login</b><span>Access your<br/>organization's HRMS</span></div><i>→</i></a>
-          <a href="/platform-admin" className="action-card"><Icon type="platform"/><div><b>Platform Login</b><span>Manage customers,<br/>modules and platform<br/>operations</span></div><i>→</i></a>
-          <a href="/trial" className="action-card"><Icon type="trial"/><div><b>Start Free Trial</b><span>Experience HumaNest<br/>with a 7-day free trial</span></div><i>→</i></a>
+          <a href="/login" className="action-card"><img className="action-reference-icon" src="/customer_icon2.png" alt=""/><div><b>Customer Login</b><span>Access your<br/>organization's HRMS</span></div><i>→</i></a>
+          <a href="/platform-admin" className="action-card"><img className="action-reference-icon" src="/platform_icon2.png" alt=""/><div><b>Platform Login</b><span>Manage customers,<br/>modules and platform<br/>operations</span></div><i>→</i></a>
+          <a href="/trial" className="action-card"><img className="action-reference-icon" src="/trial_icon2.png" alt=""/><div><b>Start Free Trial</b><span>Experience HumaNest<br/>with a 7-day free trial</span></div><i>→</i></a>
         </div>
 
         <div className="trust-row">
