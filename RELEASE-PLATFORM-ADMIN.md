@@ -7,20 +7,14 @@ This release fixes the source-control gap that left the Platform Admin frontend 
 - `app/platform-admin/page.tsx` loads a single secured platform snapshot instead of a fragile chain of browser-side RLS queries.
 - Every tenant action now displays the exact success or error returned by the backend and refreshes the selected tenant.
 - Customer administrators, enabled modules, employee/user usage and quotas are returned with each tenant.
-- `supabase/functions/trial-provision/` is the missing source-controlled Edge Function. It implements the platform snapshot, tenant lifecycle, module/license changes, customer administrators and platform-user administration.
+- `supabase/functions/trial-provision/` provides the source contract for the Platform Admin API.
 - Only a Super Admin can make destructive or identity/lifecycle changes. Other platform users can load the read-only dashboard.
 - The client is safe to prerender during a Vercel build without a local `.env.local`; production still requires the real Vercel environment variables.
 
 ## Deploy in this order
 
 1. Commit and push this repository to `main`.
-2. In Supabase, deploy the function from this repository:
-
-   ```powershell
-   supabase functions deploy trial-provision
-   ```
-
-   The Supabase-managed `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` secrets are used by the function. Do not add a service-role key to Vercel or to the repository.
+2. Do **not** redeploy `trial-provision` for this frontend release. The live HumaNest function already contains the newer Platform Admin implementation, including `platform_snapshot`, and remains the production authority.
 3. Confirm the Vercel production environment has these values:
 
    ```text
